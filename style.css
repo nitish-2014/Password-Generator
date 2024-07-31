@@ -1,0 +1,312 @@
+ *,
+ *::before,
+ *::after{
+    margin:0;
+    padding:0;
+    box-sizing: 0;
+   
+ }
+
+ body{
+    background: rgba(8, 99, 102, 0.804);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+ } 
+
+ .container{
+   width: 100%;
+   max-width: 450px;
+}
+
+
+
+ h1{
+    color: white;
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+ } 
+ 
+
+ .display-container{
+    background-color: rgba(2, 41, 20, 0.619);
+    /* important */
+    position: relative; 
+    border-radius: 0.6rem;
+    border-bottom: 0.35rem solid rgb(4, 96, 29);
+    margin: 1rem 0;
+    padding-top: 0.2rem;
+    width: 95%;
+    height: 7%;
+    
+
+ }
+
+
+ .display{
+    width: 100%;
+    background-color: transparent;
+    padding: 1.15 rem 1 rem;
+    color: yellow;
+    /* //thickness */
+    font-weight: 600; 
+    font-size: 1.5 rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25 rem;
+    border: none;
+ }
+
+
+ /* important */
+ .display::placeholder{
+     position: absolute;
+     top:  20%;
+     left :0.6rem;
+     font-size: 1.5rem;
+     line-height: 40px;
+     color: yellow;
+     opacity: 0.65;
+     text-transform: uppercase;
+     transform: translateY(-20%);
+    
+
+}
+
+.display-container button{
+   position: absolute;   
+       top: 50%;
+       right:0.3rem ;
+       transform: translateY(-50%);
+}
+
+
+
+.input-container{
+   
+   background-color:  rgba(2, 41, 20, 0.619);
+   border-radius: 0.5rem;
+   padding: 2rem;
+   width: 81%;
+   border-bottom: 0.35rem solid rgb(4, 96, 29);
+
+  
+}
+
+
+
+
+
+
+
+.length-container{
+   display: flex;
+   justify-content: space-between; 
+   align-items: center;
+     
+}
+
+
+
+/* important */
+.length-container p:nth-child(1){
+   color: white;
+   font-size: 1.5rem;
+
+
+}
+
+
+.length-container p:nth-child(2){
+   color: yellow;
+   font-size: 1.5rem;
+}
+
+
+
+.strength-container{
+   
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 1.75rem;
+   margin-bottom: 2rem;
+
+
+}
+
+.strength-container p{
+    color: white;
+    font-size:1.5rem;
+}
+
+
+.indicator{
+   width: 1.5rem;
+   height: 1.5rem;
+   border-radius: 50%;
+      
+}
+ 
+ 
+
+#generateButton{
+   width: 100%;
+   background-color: rgb(16, 38, 2);
+   text-align: center;
+   border-radius: 0.5rem;
+   border-bottom: 0.25rem solid rgb(4, 96, 29);
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   color: rgb(161, 161, 9);
+   font-weight: 600;
+   font-size: 1.25rem;
+   cursor: pointer;
+
+}
+  
+
+.check{
+   display: flex;
+   align-items: center;
+   margin: 1rem 0;
+   gap:0 1rem;
+}
+
+
+.check input{
+   /* lost default style */
+   appearance: none;
+   width: 20px;
+   height: 20px;
+   border: 1px solid rgba(2, 36, 47, 0.952);
+   cursor: pointer;
+   /* for overlap tick position  because we remove defult appearnce*/
+   position: relative;
+   border-radius: 0.25rem;
+
+
+}
+
+
+.check input:checked{
+  
+   background-color: rgb(6, 111, 111);
+  
+
+}
+
+
+
+ /* important  (use before after pseudo selector for content insertion */
+.check input:checked::before{
+   content: '✔';
+   position: absolute;
+   color: rgba(8, 237, 245, 0.918);
+   font-size: 1.05 rem;
+   font-weight: 800;
+   left: 50%;
+   top:-3.5%;
+   transform: translateX(-55%) translateY(-12%);
+   
+}
+
+
+.check label{
+   color: white;
+   font-size: 1.25rem;
+   letter-spacing: 0.75px;
+   font-weight: 600;
+  
+
+}
+
+
+.slider{
+   /* remove defult appearnce */
+   appearance: none;  
+   width: 100%;
+   height: 0.75rem;
+   border-radius: 0.55rem;
+   cursor: pointer;
+   background-color:rgba(6, 113, 116, 0.804);
+   margin-top: 1.5rem;
+   margin-bottom: 1.5rem;
+   background-image: linear-gradient( rgb(8, 192, 133),rgb(2, 74, 11));
+   background-repeat: no-repeat;
+   border: none;
+   outline: none;
+   z-index: -1;
+    
+
+
+
+}
+
+
+.slider::-webkit-slider-thumb{
+   z-index: 1;
+   appearance: none;
+    
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: yellow;
+    cursor: pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0 px rgb(221, 221, 9);
+    transition: all 100ms ease-in;
+    position: relative;
+}
+
+/* important(focus means when we click)  */
+.slider:focus{
+     outline: 3px solid rgb(152, 152, 12);
+   
+
+}
+
+.slider::-webkit-slider-thumb:hover{
+   outline: 1px solid yellow;
+   background-color: black;
+   box-shadow: 0px 0px 25px 5px yellow;
+
+}
+
+
+.copybutton{
+   background-color: transparent;
+   border: none;
+}
+
+
+
+.tooltip{
+  
+    position: absolute;
+    background-color: rgb(6, 105, 105);
+    color: yellow;
+    font-size: 1.25rem;
+    top: -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.tooltip.active{
+   opacity: 1;
+   transform: scale(0.6);
+
+}
